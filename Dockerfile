@@ -1,10 +1,10 @@
 FROM tensorflow/serving:latest
 
-COPY ./serving_model_dir /models/rr-model 
+COPY ./serving_model_dir /models
 COPY ./monitoring/prometheus.config /model_config/prometheus.config 
 
 ENV MODEL_NAME=resto-sentiment-detection-model
-ENV MODEL_BASE_PATH=/models/rr-model
+ENV MODEL_BASE_PATH=/models
 ENV MONITORING_CONFIG=/model_config/prometheus.config
 ENV PORT=8501
 
